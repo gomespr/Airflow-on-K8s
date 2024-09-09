@@ -12,9 +12,11 @@ Este documento fornece um guia para configurar e fazer o deploy do Apache Airflo
 ## Passos de Configuração
 1. **Clone do Repositório**: Clone o repositório GitHub que contém todos os arquivos necessários para o deploy.
 
-2. **Instalação das Ferramentas**: Instale as ferramentas listadas usando seu gerenciador de pacotes preferido. (Ex.: Homebrew para Mac).
+2. **Altere a permissão da pasta logs**: Execute o comando `chmod 777 logs` para alterar a permissão da pasta logs.
 
-3. **Configuração do Cluster KinD**: Crie e configure um cluster KinD local utilizando o arquivo `kind-cluster.yaml`. Utilize `extraMounts` para persistir dados e logs do Airflow em seu sistema de arquivos local.
+3. **Instalação das Ferramentas**: Instale as ferramentas listadas usando seu gerenciador de pacotes preferido. (Ex.: Homebrew para Mac).
+
+4. **Configuração do Cluster KinD**: Crie e configure um cluster KinD local utilizando o arquivo `kind-cluster.yaml`. Utilize `extraMounts` para persistir dados e logs do Airflow em seu sistema de arquivos local.
 
     Exemplo de configuração:
     ```yaml
@@ -25,9 +27,9 @@ Este documento fornece um guia para configurar e fazer o deploy do Apache Airflo
         containerPath: /logs
     ```
 
-4. **Criar o Cluster**: Execute `kind create cluster --config kind-cluster.yaml` para criar o cluster.
+5. **Criar o Cluster**: Execute `kind create cluster --config kind-cluster.yaml` para criar o cluster.
 
-5. **Limpeza do Cluster**: Para remover o cluster após o uso, execute `kind delete cluster --name airflow-cluster`.
+6. **Limpeza do Cluster**: Para remover o cluster após o uso, execute `kind delete cluster --name airflow-cluster`.
 
 ## Pré-requisitos para o Deploy
 1. **Namespace Airflow**: Crie um namespace `airflow` para organizar os recursos.
