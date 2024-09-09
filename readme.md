@@ -19,9 +19,9 @@ Este documento fornece um guia para configurar e fazer o deploy do Apache Airflo
     Exemplo de configuração:
     ```yaml
     extraMounts:
-      - hostPath: . /dags
+      - hostPath: ./dags
         containerPath: /dags
-      - hostPath: . /logs
+      - hostPath: ./logs
         containerPath: /logs
     ```
 
