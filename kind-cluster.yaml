@@ -7,9 +7,9 @@ nodes:
     image: kindest/node:v1.27.1
     # https://kind.sigs.k8s.io/docs/user/configuration/#extra-mounts
     extraMounts:
-      - hostPath: . /dags
+      - hostPath: ./dags
         containerPath: /dags
-      - hostPath: . /logs
+      - hostPath: ./logs
         containerPath: /logs
     # https://kind.sigs.k8s.io/docs/user/ingress/#create-cluster
     kubeadmConfigPatches:  
@@ -30,15 +30,15 @@ nodes:
     image: kindest/node:v1.27.1
     # https://kind.sigs.k8s.io/docs/user/configuration/#extra-mounts
     extraMounts:
-      - hostPath: . /dags
+      - hostPath: ./dags
         containerPath: /dags
-      - hostPath: . /logs
+      - hostPath: ./logs
         containerPath: /logs
   - role: worker
     # https://kind.sigs.k8s.io/docs/user/configuration/#extra-mounts
     image: kindest/node:v1.27.1
     extraMounts:
-      - hostPath: . /dags
+      - hostPath: ./dags
         containerPath: /dags
-      - hostPath: . /logs
+      - hostPath: ./logs
         containerPath: /logs
